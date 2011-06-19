@@ -30,6 +30,7 @@
     <orderEntry type="module-library" exported="">
       <library name="Grails User Library (salary-calculator-grailsPlugins)">
         <CLASSES>
+          <root url="file://$USER_HOME$/.grails/1.3.7/projects/salary-calculator/plugins/tomcat-1.3.7/lib" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.codehaus.geb/geb-junit3/jars/geb-junit3-0.5.1.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.codehaus.geb/geb-easyb/jars/geb-easyb-0.5.1.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.codehaus.geb/geb-junit4/jars/geb-junit4-0.5.1.jar!/" />
@@ -41,7 +42,25 @@
           <root url="jar://$USER_HOME$/.ivy2/cache/junit/junit-dep/jars/junit-dep-4.8.2.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.spockframework/spock-core/jars/spock-core-0.5-groovy-1.7.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.spockframework/spock-grails-support/jars/spock-grails-support-0.5-groovy-1.7.jar!/" />
-          <root url="file://$USER_HOME$/.grails/1.3.7/projects/salary-calculator/plugins/tomcat-1.3.7/lib" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/commons-io/commons-io/jars/commons-io-2.0.1.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.w3c.css/sac/jars/sac-1.3.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/net.sourceforge.cssparser/cssparser/jars/cssparser-0.9.5.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/net.sourceforge.nekohtml/nekohtml/jars/nekohtml-1.9.14.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/xerces/xercesImpl/jars/xercesImpl-2.9.1.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/net.sourceforge.htmlunit/htmlunit-core-js/jars/htmlunit-core-js-2.8.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.james/apache-mime4j/jars/apache-mime4j-0.6.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.httpcomponents/httpmime/jars/httpmime-4.0.1.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/commons-logging/commons-logging/jars/commons-logging-1.1.1.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.httpcomponents/httpcore/jars/httpcore-4.0.1.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.httpcomponents/httpclient/jars/httpclient-4.0.2.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/xalan/xalan/jars/xalan-2.7.1.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/net.sourceforge.htmlunit/htmlunit/jars/htmlunit-2.8.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/com.google.guava/guava/jars/guava-r09.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.seleniumhq.selenium/selenium-api/jars/selenium-api-2.0rc2.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.seleniumhq.selenium/selenium-htmlunit-driver/jars/selenium-htmlunit-driver-2.0rc2.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.json/json/jars/json-20080701.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.seleniumhq.selenium/selenium-remote-driver/jars/selenium-remote-driver-2.0rc2.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.seleniumhq.selenium/selenium-firefox-driver/jars/selenium-firefox-driver-2.0rc2.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
