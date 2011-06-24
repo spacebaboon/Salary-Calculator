@@ -6,6 +6,6 @@ package geb
  * Time: 17:10
  */
 class IndexPage extends GrailsPage {
-    static controller = 'Index'
+    static controller = 'index'
     static action = 'index'
 }
