@@ -22,9 +22,8 @@ abstract class GrailsPage extends Page {
         }
 
         def actualPageControllerName = controllerName
-        def actualPageActionName = actionName
+             assert actualPageControllerName == expectedPageControllerName
 
-        assert actualPageControllerName == expectedPageControllerName
         assert actualPageActionName == expectedPageActionName
 
         true // at checkers must return true

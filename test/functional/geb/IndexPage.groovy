@@ -8,4 +8,9 @@ package geb
 class IndexPage extends GrailsPage {
     static controller = 'index'
     static action = 'index'
+
+    static content = {
+        optionsLink { $('a', id: 'optionsLink') }
+        
+    }
 }

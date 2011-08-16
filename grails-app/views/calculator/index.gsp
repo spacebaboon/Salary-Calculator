@@ -9,12 +9,15 @@
             <h1>Salary Calculator</h1>
         </div>
         <div>
-        <g:form controller="login">
-            <g:textField name="userName"/>
-            <g:passwordField name="password"/>
-            <g:submitButton name="submit" value="log in"/>
+        <g:form controller="calculator">
+            <g:textField name="annualSalary"/>
+            <g:submitButton name="submit" value="calculate"/>
         </g:form>
         </div>
-        <g:link controller="register">Register a new account</g:link>
+        <div id="earnings">
+            <p>Daily earnings: ${daily}</p>
+            <p>Monthly earnings: ${monthly}</p>
+            <p>Annual earnings: ${annual}</p>
+        </div>
     </body>
 </html>
