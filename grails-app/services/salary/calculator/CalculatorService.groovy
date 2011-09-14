@@ -1,21 +1,24 @@
 package salary.calculator
 
 import org.joda.time.*
+import java.math.MathContext
 
 class CalculatorService {
 
     static transactional = true
     def startTime = new LocalTime(9, 0)
     def finishTime = new LocalTime(18, 0)
+    def twoDecimalPlaces = new MathContext(2)
 
     BigDecimal currentDaily(Integer annualSalary, LocalDateTime now) {
         def currentWorkTime = currentTimeWithinWorkHours(now.toLocalTime())
         def secondsWorked = new Period(startTime, currentWorkTime).toStandardSeconds()
         def hoursWorked = secondsWorked.getSeconds() / 60 / 60
-        def daysInMonth = now.toLocalDate().monthOfYear().getMaximumValue()
-        def hourlyRate = fullDaily(annualSalary, daysInMonth) / (finishTime.getHourOfDay() - startTime.getHourOfDay())
+        def daysInMonth = now.dayOfMonth().getMaximumValue()
+        BigDecimal fullDaily = fullDaily(annualSalary, daysInMonth)
+        def hourlyRate = fullDaily / (finishTime.getHourOfDay() - startTime.getHourOfDay())
         def currentDaily = hoursWorked * hourlyRate
-        return currentDaily
+        return new BigDecimal(currentDaily, twoDecimalPlaces)
     }
 
     LocalTime currentTimeWithinWorkHours(LocalTime now) {
@@ -35,7 +38,9 @@ class CalculatorService {
         def amountEarnedByFullDays = daysWorkedThisMonth / numberOfDaysThisMonth * fullMonthly(annualSalary)
         
         def amountEarnedToday = currentDaily(annualSalary, now)
-        return amountEarnedByFullDays + amountEarnedToday
+        long currentMonthly =  amountEarnedByFullDays + amountEarnedToday
+        return new BigDecimal(currentMonthly, twoDecimalPlaces)
+
     }
 
     BigDecimal currentAnnual(int annualSalary, LocalDateTime now) {
@@ -43,7 +48,7 @@ class CalculatorService {
     }
 
     BigDecimal fullDaily(int annual, int daysInMonth) {
-        return fullMonthly(annual) / daysInMonth
+        return new BigDecimal(fullMonthly(annual) / daysInMonth, twoDecimalPlaces)
     }
 
     BigDecimal fullMonthly(int annual) {
