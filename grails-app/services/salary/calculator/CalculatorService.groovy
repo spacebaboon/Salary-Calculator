@@ -38,13 +38,16 @@ class CalculatorService {
         def amountEarnedByFullDays = daysWorkedThisMonth / numberOfDaysThisMonth * fullMonthly(annualSalary)
         
         def amountEarnedToday = currentDaily(annualSalary, now)
-        long currentMonthly =  amountEarnedByFullDays + amountEarnedToday
+        def currentMonthly =  amountEarnedByFullDays + amountEarnedToday
         return new BigDecimal(currentMonthly, twoDecimalPlaces)
 
     }
 
     BigDecimal currentAnnual(int annualSalary, LocalDateTime now) {
-        return annualSalary
+        int completeMonths = now.monthOfYear - 1
+        def completeMonthsEarnings = completeMonths * fullMonthly(annualSalary)
+        def partialMonthsEarnings = currentMonthly(annualSalary, now)
+        return completeMonthsEarnings + partialMonthsEarnings
     }
 
     BigDecimal fullDaily(int annual, int daysInMonth) {

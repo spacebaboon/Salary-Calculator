@@ -105,4 +105,18 @@ class CalculatorServiceTests extends GrailsUnitTestCase {
         assert annualSal / 12 == monthlySoFar
     }
 
+    void testAnnualAt9amJan1ReturnsZero() {
+        int annualSal = 100000
+        LocalDateTime nineAmJan1 = new LocalDateTime(2012, 1, 1, 9, 0, 0)
+        def annualSoFar = calculatorService.currentAnnual(annualSal, nineAmJan1)
+        assert 0 == annualSoFar
+    }
+
+    void testAnnual6pmDecember31ReturnsFullAnnual() {
+        int annualSal = 375000
+        LocalDateTime sixPmDec31 = new LocalDateTime(2000, 12, 31, 18, 0, 0)
+        def annualSoFar = calculatorService.currentAnnual(annualSal, sixPmDec31)
+        assert annualSal == annualSoFar
+    }
+    
 }
