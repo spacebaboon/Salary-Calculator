@@ -37,7 +37,7 @@ class CalculatorServiceTests extends GrailsUnitTestCase {
 
     void testFullMonthlyReturnsCorrectValue() {
         int annualSalary = 24000
-        float monthly = calculatorService.fullMonthly(annualSalary)
+        BigDecimal monthly = calculatorService.fullMonthly(annualSalary)
 
         assert monthly == 2000
     }
@@ -47,7 +47,7 @@ class CalculatorServiceTests extends GrailsUnitTestCase {
         def eightOClock = new LocalDateTime(2011, 1, 1, 8, 0)
         println "time: $eightOClock"
 
-        float dailySoFar = calculatorService.currentDaily(annualSal, eightOClock)
+        BigDecimal dailySoFar = calculatorService.currentDaily(annualSal, eightOClock)
         assert 0 == dailySoFar
     }
 
@@ -56,52 +56,52 @@ class CalculatorServiceTests extends GrailsUnitTestCase {
         def nineOClock = new LocalDateTime(2011, 1, 1, 9, 0)
         println "time: $nineOClock"
 
-        float dailySoFar = calculatorService.currentDaily(annualSal, nineOClock)
+        BigDecimal dailySoFar = calculatorService.currentDaily(annualSal, nineOClock)
         assert 0 == dailySoFar
     }
 
     void testDailyAt6pmReturnsFullDailyRate() {
         int annualSal = 60000
         def sixPm = new LocalDateTime(2011, 1, 1, 18, 0)
-        float fullDaily = calculatorService.fullDaily(annualSal, 31) // days in Jan
-        float dailySoFar = calculatorService.currentDaily(annualSal, sixPm)
+        BigDecimal fullDaily = calculatorService.fullDaily(annualSal, 31) // days in Jan
+        BigDecimal dailySoFar = calculatorService.currentDaily(annualSal, sixPm)
         assert fullDaily == dailySoFar
     }
 
     void testDailyAt7pmReturnsFullDailyRate() {
         int annualSal = 60000
         def sevenPm = new LocalDateTime(2011, 1, 1, 19, 0)
-        float fullDaily = calculatorService.fullDaily(annualSal, 31)
-        float dailySoFar = calculatorService.currentDaily(annualSal, sevenPm)
+        BigDecimal fullDaily = calculatorService.fullDaily(annualSal, 31)
+        BigDecimal dailySoFar = calculatorService.currentDaily(annualSal, sevenPm)
         assert fullDaily == dailySoFar
     }
 
     void testDailyAt1230ReturnsHalfDailyRate() {
         int annualSal = 50000
         def oneThirty = new LocalDateTime(2011, 1, 1, 13, 30)
-        float fullDaily = calculatorService.fullDaily(annualSal, 31)
-        float dailySoFar = calculatorService.currentDaily(annualSal, oneThirty)
-        assert fullDaily / 2 == dailySoFar
+        BigDecimal fullDaily = calculatorService.fullDaily(annualSal, 31)
+        BigDecimal dailySoFar = calculatorService.currentDaily(annualSal, oneThirty)
+        assert new BigDecimal(fullDaily / 2).setScale(2, BigDecimal.ROUND_HALF_EVEN) == dailySoFar
     }
 
     void testMonthlyAt9amFirstAprilReturnsZero() {
         int annualSal = 30000
         def aprilFirst = new LocalDateTime(2011, 4, 1, 9, 0, 0)
-        float monthlySoFar = calculatorService.currentMonthly(annualSal, aprilFirst)
+        BigDecimal monthlySoFar = calculatorService.currentMonthly(annualSal, aprilFirst)
         assert 0 == monthlySoFar
     }
 
     void testMonthlyOn31Jan6pmReturnsFullMonthlyRate() {
         int annualSal = 24000
         def january31SixPm = new LocalDateTime(2011, 1, 31, 18, 0, 0)
-        float monthlySoFar = calculatorService.currentMonthly(annualSal, january31SixPm)
+        BigDecimal monthlySoFar = calculatorService.currentMonthly(annualSal, january31SixPm)
         assert annualSal / 12 == monthlySoFar
     }
 
     void testMonthlyOn28Feb11pmReturnsFullMonthlyRate() {
         int annualSal = 60000
         def january31SixPm = new LocalDateTime(2011, 2, 28, 23, 0, 0)
-        float monthlySoFar = calculatorService.currentMonthly(annualSal, january31SixPm)
+        BigDecimal monthlySoFar = calculatorService.currentMonthly(annualSal, january31SixPm)
         assert annualSal / 12 == monthlySoFar
     }
 
@@ -115,8 +115,12 @@ class CalculatorServiceTests extends GrailsUnitTestCase {
     void testAnnual6pmDecember31ReturnsFullAnnual() {
         int annualSal = 375000
         LocalDateTime sixPmDec31 = new LocalDateTime(2000, 12, 31, 18, 0, 0)
-        def annualSoFar = calculatorService.currentAnnual(annualSal, sixPmDec31)
+        BigDecimal annualSoFar = calculatorService.currentAnnual(annualSal, sixPmDec31)
         assert annualSal == annualSoFar
     }
-    
+
+    void testRoundToTwoDecimalPlaces() {
+        BigDecimal bigNumber = new BigDecimal("123456789.002")
+        assert 123456789 == calculatorService.round(bigNumber)
+    }
 }

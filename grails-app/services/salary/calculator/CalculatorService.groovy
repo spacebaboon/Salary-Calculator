@@ -1,14 +1,14 @@
 package salary.calculator
 
 import org.joda.time.*
-import java.math.MathContext
 
 class CalculatorService {
 
     static transactional = true
     def startTime = new LocalTime(9, 0)
     def finishTime = new LocalTime(18, 0)
-    def twoDecimalPlaces = new MathContext(2)
+    def TWO_DECIMAL_PLACES = 2
+    def ROUNDING_MODE = BigDecimal.ROUND_HALF_EVEN
 
     BigDecimal currentDaily(Integer annualSalary, LocalDateTime now) {
         def currentWorkTime = currentTimeWithinWorkHours(now.toLocalTime())
@@ -17,8 +17,8 @@ class CalculatorService {
         def daysInMonth = now.dayOfMonth().getMaximumValue()
         BigDecimal fullDaily = fullDaily(annualSalary, daysInMonth)
         def hourlyRate = fullDaily / (finishTime.getHourOfDay() - startTime.getHourOfDay())
-        def currentDaily = hoursWorked * hourlyRate
-        return new BigDecimal(currentDaily, twoDecimalPlaces)
+        BigDecimal currentDaily = hoursWorked * hourlyRate
+        return round(currentDaily)
     }
 
     LocalTime currentTimeWithinWorkHours(LocalTime now) {
@@ -39,22 +39,26 @@ class CalculatorService {
         
         def amountEarnedToday = currentDaily(annualSalary, now)
         def currentMonthly =  amountEarnedByFullDays + amountEarnedToday
-        return new BigDecimal(currentMonthly, twoDecimalPlaces)
+        return round(currentMonthly)
 
     }
 
     BigDecimal currentAnnual(int annualSalary, LocalDateTime now) {
         int completeMonths = now.monthOfYear - 1
-        def completeMonthsEarnings = completeMonths * fullMonthly(annualSalary)
-        def partialMonthsEarnings = currentMonthly(annualSalary, now)
-        return completeMonthsEarnings + partialMonthsEarnings
+        float completeMonthsEarnings = completeMonths * fullMonthly(annualSalary)
+        float partialMonthsEarnings = currentMonthly(annualSalary, now)
+        return round(completeMonthsEarnings + partialMonthsEarnings)
     }
 
     BigDecimal fullDaily(int annual, int daysInMonth) {
-        return new BigDecimal(fullMonthly(annual) / daysInMonth, twoDecimalPlaces)
+        return round(fullMonthly(annual) / daysInMonth)
     }
 
     BigDecimal fullMonthly(int annual) {
         return annual / 12
+    }
+
+    BigDecimal round(BigDecimal value) {
+        return value.setScale(TWO_DECIMAL_PLACES, ROUNDING_MODE)
     }
 }

@@ -1,5 +1,7 @@
 package salary.calculator
 
+import org.joda.time.LocalDateTime
+
 class CalculatorController {
 
     def calculatorService
@@ -8,9 +10,10 @@ class CalculatorController {
 
         def annualSalary = Integer.valueOf(params.annualSalary ?: '0')
 
-        BigDecimal daily = calculatorService.currentDaily(annualSalary)
-        BigDecimal monthly = calculatorService.currentMonthly(annualSalary)
-        BigDecimal annual = calculatorService.currentAnnual(annualSalary)
+        LocalDateTime now = new LocalDateTime()
+        BigDecimal daily = calculatorService.currentDaily(annualSalary, now)
+        BigDecimal monthly = calculatorService.currentMonthly(annualSalary, now)
+        BigDecimal annual = calculatorService.currentAnnual(annualSalary, now)
 
         [daily:daily, monthly:monthly, annual: annual]
     }
