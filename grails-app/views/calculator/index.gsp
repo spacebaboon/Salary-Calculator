@@ -10,7 +10,7 @@
         </div>
         <div>
         <g:form controller="calculator">
-            <g:textField name="annualSalary"/>
+            <g:textField name="annualSalary" value="${annualSalary}"/>
             <g:submitButton name="submit" value="calculate"/>
         </g:form>
         </div>

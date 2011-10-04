@@ -123,4 +123,7 @@ class CalculatorServiceTests extends GrailsUnitTestCase {
         BigDecimal bigNumber = new BigDecimal("123456789.002")
         assert 123456789 == calculatorService.round(bigNumber)
     }
+
+    // TODO: move day calculations to monday - friday only
+    
 }

@@ -15,6 +15,6 @@ class CalculatorController {
         BigDecimal monthly = calculatorService.currentMonthly(annualSalary, now)
         BigDecimal annual = calculatorService.currentAnnual(annualSalary, now)
 
-        [daily:daily, monthly:monthly, annual: annual]
+        [annualSalary:annualSalary, daily:daily, monthly:monthly, annual:annual]
     }
 }
