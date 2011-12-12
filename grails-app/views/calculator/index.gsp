@@ -1,23 +1,29 @@
 <html>
-    <head>
-        <title>Salary Calculator</title>
-        <meta name="layout" content="main" />
-        <link rel="stylesheet" href="../css/screen.css" type="text/css" media="screen, projection">
-    </head>
-    <body>
-        <div class="title">
-            <h1>Salary Calculator</h1>
-        </div>
-        <div>
-        <g:form controller="calculator">
-            <g:textField name="annualSalary" value="${annualSalary}"/>
-            <g:submitButton name="submit" value="calculate"/>
-        </g:form>
-        </div>
-        <div id="earnings">
-            <p>Daily earnings: ${daily}</p>
-            <p>Monthly earnings: ${monthly}</p>
-            <p>Annual earnings: ${annual}</p>
-        </div>
-    </body>
+<head>
+    <title>Salary Calculator</title>
+    <meta name="layout" content="main"/>
+    <link rel="stylesheet" href="../css/screen.css" type="text/css" media="screen, projection">
+    <g:javascript library="jquery" plugin="jquery"/>
+    <g:javascript src="/updateSalary.js"/>
+</head>
+
+<body>
+
+<div class="content">
+
+    <div class="title">
+        <h1>Salary Calculator</h1>
+    </div>
+
+    <form onsubmit="updateSalary(); return false;">
+        Annual Salary: <input type="text" name="annualSalary"/>
+    </form>
+
+    <div id="earnings">
+        <g:render template="salaries"/>
+    </div>
+
+</div>
+
+</body>
 </html>

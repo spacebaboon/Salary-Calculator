@@ -1,0 +1,16 @@
+body {
+    font-family: "lekton";
+    font-size: 36pt;
+}
+
+.content {
+    margin: 100px;
+}
+
+input {
+    font-family: inherit;
+    font-size: inherit;
+    border: none;
+    height: 40px;
+    width: 150px;
+}
