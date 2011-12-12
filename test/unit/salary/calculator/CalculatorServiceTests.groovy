@@ -10,11 +10,11 @@ import java.security.Security
 
 class CalculatorServiceTests extends GrailsUnitTestCase {
 
-    private CalculatorService calculatorService
+    private CalculatorJavaService calculatorService
 
     protected void setUp() {
         super.setUp()
-        calculatorService = new CalculatorService()
+        calculatorService = new CalculatorJavaService()
     }
 
     protected void tearDown() {

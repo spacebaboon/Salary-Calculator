@@ -21,22 +21,12 @@ class CalculatorService {
         return round(currentDaily)
     }
 
-    LocalTime currentTimeWithinWorkHours(LocalTime now) {
-        if (now.compareTo(startTime) < 0){
-            return startTime
-        } else if (now.compareTo(finishTime) > 0) {
-            return finishTime
-        } else {
-            return now
-        }
-    }
-
     BigDecimal currentMonthly(int annualSalary, LocalDateTime now) {
         def nowDate = now.toLocalDate()
         def daysWorkedThisMonth = nowDate.getDayOfMonth() - 1
         def numberOfDaysThisMonth = nowDate.dayOfMonth().getMaximumValue()
         def amountEarnedByFullDays = daysWorkedThisMonth / numberOfDaysThisMonth * fullMonthly(annualSalary)
-        
+
         def amountEarnedToday = currentDaily(annualSalary, now)
         def currentMonthly =  amountEarnedByFullDays + amountEarnedToday
         return round(currentMonthly)
@@ -50,15 +40,25 @@ class CalculatorService {
         return round(completeMonthsEarnings + partialMonthsEarnings)
     }
 
-    BigDecimal fullDaily(int annual, int daysInMonth) {
+    protected currentTimeWithinWorkHours(LocalTime now) {
+        if (now.compareTo(startTime) < 0){
+            return startTime
+        } else if (now.compareTo(finishTime) > 0) {
+            return finishTime
+        } else {
+            return now
+        }
+    }
+
+    protected fullDaily(int annual, int daysInMonth) {
         return round(fullMonthly(annual) / daysInMonth)
     }
 
-    BigDecimal fullMonthly(int annual) {
+    protected fullMonthly(int annual) {
         return annual / 12
     }
 
-    BigDecimal round(BigDecimal value) {
+    protected round(BigDecimal value) {
         return value.setScale(TWO_DECIMAL_PLACES, ROUNDING_MODE)
     }
 }
