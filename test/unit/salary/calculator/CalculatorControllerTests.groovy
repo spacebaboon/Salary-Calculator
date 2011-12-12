@@ -7,10 +7,6 @@ class CalculatorControllerTests extends ControllerUnitTestCase {
         super.setUp()
     }
 
-    protected void tearDown() {
-        super.tearDown()
-    }
-
     void testSomething() {
 
     }
