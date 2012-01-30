@@ -63,7 +63,7 @@ class CalculatorServiceTests extends GrailsUnitTestCase {
     void testDailyAt6pmReturnsFullDailyRate() {
         int annualSal = 60000
         def sixPm = new LocalDateTime(2011, 1, 1, 18, 0)
-        BigDecimal fullDaily = calculatorService.fullDaily(annualSal, 31) // days in Jan
+        BigDecimal fullDaily = calculatorService.round(calculatorService.fullDaily(annualSal, 31)) // days in Jan
         BigDecimal dailySoFar = calculatorService.currentDaily(annualSal, sixPm)
         assert fullDaily == dailySoFar
     }
@@ -71,12 +71,12 @@ class CalculatorServiceTests extends GrailsUnitTestCase {
     void testDailyAt7pmReturnsFullDailyRate() {
         int annualSal = 60000
         def sevenPm = new LocalDateTime(2011, 1, 1, 19, 0)
-        BigDecimal fullDaily = calculatorService.fullDaily(annualSal, 31)
+        BigDecimal fullDaily = calculatorService.round(calculatorService.fullDaily(annualSal, 31))
         BigDecimal dailySoFar = calculatorService.currentDaily(annualSal, sevenPm)
         assert fullDaily == dailySoFar
     }
 
-    void testDailyAt1230ReturnsHalfDailyRate() {
+    void testDailyAt1330ReturnsHalfDailyRate() {
         int annualSal = 50000
         def oneThirty = new LocalDateTime(2011, 1, 1, 13, 30)
         BigDecimal fullDaily = calculatorService.fullDaily(annualSal, 31)
@@ -113,7 +113,7 @@ class CalculatorServiceTests extends GrailsUnitTestCase {
     }
 
     void testAnnual6pmDecember31ReturnsFullAnnual() {
-        int annualSal = 375000
+        int annualSal = 120000
         LocalDateTime sixPmDec31 = new LocalDateTime(2000, 12, 31, 18, 0, 0)
         BigDecimal annualSoFar = calculatorService.currentAnnual(annualSal, sixPmDec31)
         assert annualSal == annualSoFar

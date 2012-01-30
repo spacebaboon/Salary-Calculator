@@ -4,6 +4,7 @@ import org.codehaus.groovy.runtime.typehandling.BigDecimalMath;
 import org.joda.time.*;
 
 import java.math.BigDecimal;
+import java.math.MathContext;
 
 public class CalculatorJavaService implements ICalculatorJavaService {
 
@@ -16,11 +17,11 @@ public class CalculatorJavaService implements ICalculatorJavaService {
     public BigDecimal currentDaily(int annualSalary, LocalDateTime now) {
         LocalTime currentWorkTime = currentTimeWithinWorkHours(now.toLocalTime());
         Seconds secondsWorked = new Period(startTime, currentWorkTime).toStandardSeconds();
-        float hoursWorked = secondsWorked.getSeconds() / 60 / 60;
+        float hoursWorked = (float)secondsWorked.getSeconds() / 60 / 60;
         int daysInMonth = now.dayOfMonth().getMaximumValue();
-        float fullDaily = fullDaily(annualSalary, daysInMonth);
-        float hourlyRate = fullDaily / (finishTime.getHourOfDay() - startTime.getHourOfDay());
-        float currentDaily = hoursWorked * hourlyRate;
+        BigDecimal fullDaily = fullDaily(annualSalary, daysInMonth);
+        BigDecimal hourlyRate = fullDaily.divide(new BigDecimal(finishTime.getHourOfDay() - startTime.getHourOfDay()), MathContext.DECIMAL64);
+        BigDecimal currentDaily = hourlyRate.multiply(new BigDecimal(hoursWorked));
         return round(currentDaily);
     }
 
@@ -28,14 +29,15 @@ public class CalculatorJavaService implements ICalculatorJavaService {
         LocalDate nowDate = now.toLocalDate();
         int daysWorkedThisMonth = nowDate.getDayOfMonth() - 1;
         int numberOfDaysThisMonth = nowDate.dayOfMonth().getMaximumValue();
-        BigDecimal amountEarnedByFullDays = new BigDecimal(fullMonthly(annualSalary) * (daysWorkedThisMonth / numberOfDaysThisMonth));
+        float proportionOfMonthWorked = new Float(daysWorkedThisMonth) / numberOfDaysThisMonth;
+        BigDecimal amountEarnedByFullDays = fullMonthly(annualSalary).multiply(new BigDecimal(proportionOfMonthWorked));
         BigDecimal amountEarnedToday = currentDaily(annualSalary, now);
         return round(amountEarnedByFullDays.add(amountEarnedToday));
     }
 
     public BigDecimal currentAnnual(int annualSalary, LocalDateTime now) {
         int completeMonths = now.getMonthOfYear() - 1;
-        BigDecimal completeMonthsEarnings = round(fullMonthly(annualSalary) * completeMonths);
+        BigDecimal completeMonthsEarnings = round(fullMonthly(annualSalary).multiply(new BigDecimal(completeMonths)));
         BigDecimal partialMonthsEarnings = currentMonthly(annualSalary, now);
         return round(completeMonthsEarnings.add(partialMonthsEarnings));
     }
@@ -50,16 +52,12 @@ public class CalculatorJavaService implements ICalculatorJavaService {
         }
     }
 
-    protected float fullDaily(int annual, int daysInMonth) {
-        return annual / daysInMonth;
+    protected BigDecimal fullDaily(int annual, int daysInMonth) {
+        return fullMonthly(annual).divide(new BigDecimal(daysInMonth), MathContext.DECIMAL64);
     }
 
-    protected float fullMonthly(int annual) {
-        return annual / MONTHS_IN_YEAR;
-    }
-
-    protected BigDecimal round(double value) {
-        return BigDecimal.valueOf(value).setScale(TWO_DECIMAL_PLACES, ROUNDING_MODE);
+    protected BigDecimal fullMonthly(int annual) {
+        return new BigDecimal(annual).divide(new BigDecimal(MONTHS_IN_YEAR), MathContext.DECIMAL64);
     }
 
     protected BigDecimal round(BigDecimal value) {
