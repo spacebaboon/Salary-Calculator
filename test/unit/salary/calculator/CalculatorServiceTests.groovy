@@ -5,8 +5,8 @@ import org.joda.time.LocalDateTime
 
 import org.joda.time.LocalTime
 
-import salary.calculator.domain.WorkProfile
-import salary.calculator.service.CalculatorJavaService
+import uk.co.monkeybusiness.salarycalculator.domain.WorkProfile
+import uk.co.monkeybusiness.salarycalculator.service.service.CalculatorJavaService
 
 class CalculatorServiceTests extends GrailsUnitTestCase {
 
@@ -31,6 +31,7 @@ class CalculatorServiceTests extends GrailsUnitTestCase {
         def expected = new LocalTime(9, 0)
         def actual = calculatorService.currentTimeWithinWorkHours(workProfile, eightAm)
         assert expected == actual
+        fuckuphere
     }
 
     void testCurrentTimeWithinWorkHoursReturnsEndTimeIfAfter() {

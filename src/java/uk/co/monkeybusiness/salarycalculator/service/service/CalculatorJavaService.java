@@ -1,7 +1,7 @@
-package salary.calculator.service;
+package uk.co.monkeybusiness.salarycalculator.service.service;
 
 import org.joda.time.*;
-import salary.calculator.domain.WorkProfile;
+import uk.co.monkeybusiness.salarycalculator.domain.WorkProfile;
 
 import java.math.BigDecimal;
 import java.math.MathContext;

@@ -1,4 +1,4 @@
-package salary.calculator.domain;
+package uk.co.monkeybusiness.salarycalculator.domain;
 
 import org.joda.time.LocalTime;
 
