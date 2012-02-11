@@ -31,7 +31,6 @@ class CalculatorServiceTests extends GrailsUnitTestCase {
         def expected = new LocalTime(9, 0)
         def actual = calculatorService.currentTimeWithinWorkHours(workProfile, eightAm)
         assert expected == actual
-        fuckuphere
     }
 
     void testCurrentTimeWithinWorkHoursReturnsEndTimeIfAfter() {
