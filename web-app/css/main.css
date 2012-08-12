@@ -1,6 +1,6 @@
 body {
     font-family: "lekton";
-    font-size: 36pt;
+    font-size: 24pt;
 }
 
 .content {
@@ -13,4 +13,13 @@ input {
     border: none;
     height: 40px;
     width: 150px;
+}
+
+.userinput {
+    font-size: 18pt;
+    padding: 5px 0;
+
+}
+.userinput input {
+    border: 1px dotted #eee;
 }

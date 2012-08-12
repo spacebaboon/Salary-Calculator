@@ -1,6 +1,6 @@
 function updateSalary() {
-    var salary = jQuery('input[name=annualSalary]').val();
-    jQuery.ajax({type:'POST', url:'/salary-calculator/calculator/updateEarnings/' + salary, success:function(data, textStatus) {
+    var data = jQuery('#workprofile').serialize();
+    jQuery.ajax({type:'POST', url:'/salary-calculator/calculator/updateEarnings/', data: data, success:function(data, textStatus) {
         jQuery('#earnings').html(data);
     },error:function(XMLHttpRequest, textStatus, errorThrown) {
     }});

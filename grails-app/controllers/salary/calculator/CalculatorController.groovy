@@ -8,37 +8,31 @@ import uk.co.monkeybusiness.salarycalculator.domain.WorkProfile
 class CalculatorController {
 
     CalculatorJavaService calculatorJavaService
-    static LocalTime startTime = new LocalTime(9, 0)
-    static LocalTime endTime = new LocalTime(17, 30)
+//    static LocalTime startTime = new LocalTime(9, 0)
+//    static LocalTime endTime = new LocalTime(17, 30)
 
     def index = {
-        int annualSalary = Integer.valueOf(params.annualSalary ?: '0')
-        log.debug "annual salary: ${annualSalary}"
-
-        def workProfile = new WorkProfile(annualSalary: annualSalary, startTime: startTime, endTime: endTime)
-
-        getSalaryFigures(workProfile)
+        [annualSalary: 0, startHour: 9, startMin: '00', endHour: 17, endMin: 30,
+                mon: 'on', tue: 'on', wed: 'on', thu: 'on', fri: 'on']
     }
 
     def updateEarnings = {
 
+        log.debug("received: ${params}")
+
         int annualSalary = Integer.valueOf(params.id ?: params.annualSalary ?: '0')
-        log.debug "annual salary: ${annualSalary}"
+        def startTime = new LocalTime(params.startHour as int, params.startMin as int)
+        def endTime = new LocalTime(params.endHour as int, params.endMin as int)
         def workProfile = new WorkProfile(annualSalary: annualSalary, startTime: startTime, endTime: endTime)
 
-        LinkedHashMap<String, BigDecimal> model = getSalaryFigures(workProfile)
-
-        render(template: "salaries", model: model)
-    }
-
-    private LinkedHashMap<String, BigDecimal> getSalaryFigures(WorkProfile workProfile) {
         LocalDateTime now = new LocalDateTime()
-
         BigDecimal daily = calculatorJavaService.currentDaily(workProfile, now)
         BigDecimal monthly = calculatorJavaService.currentMonthly(workProfile, now)
         BigDecimal annual = calculatorJavaService.currentAnnual(workProfile, now)
 
-        def model = [annualSalary: workProfile.annualSalary, daily: daily, monthly: monthly, annual: annual]
-        model
+        def model = [daily: daily, monthly: monthly, annual: annual]
+
+        render(template: "salaries", model: model)
     }
+
 }
