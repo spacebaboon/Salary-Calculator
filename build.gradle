@@ -15,7 +15,7 @@ repositories {
 }
 
 dependencies {
-    compile group: 'joda-time', name: 'joda-time', version: '1.5.2'
+//    compile 'joda-time:joda-time:2.1'
 }
 
 task copyJar(type: Copy, dependsOn: jar) {

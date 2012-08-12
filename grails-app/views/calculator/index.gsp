@@ -16,7 +16,7 @@
     </div>
 
     <form onsubmit="updateSalary(); return false;">
-        Annual Salary: <input type="text" name="annualSalary"/>
+        Annual Salary: <input type="text" value="${annualSalary}" name="annualSalary"/>
     </form>
 
     <div id="earnings">

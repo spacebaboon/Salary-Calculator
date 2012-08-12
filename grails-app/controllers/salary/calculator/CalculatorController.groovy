@@ -1,26 +1,44 @@
 package salary.calculator
 
 import org.joda.time.LocalDateTime
+import uk.co.monkeybusiness.salarycalculator.service.service.CalculatorJavaService
+import org.joda.time.LocalTime
+import uk.co.monkeybusiness.salarycalculator.domain.WorkProfile
 
 class CalculatorController {
 
-    def calculatorJavaService
+    CalculatorJavaService calculatorJavaService
+    static LocalTime startTime = new LocalTime(9, 0)
+    static LocalTime endTime = new LocalTime(17, 30)
 
     def index = {
-        [daily: 0, monthly: 0, annual: 0]
+        int annualSalary = Integer.valueOf(params.annualSalary ?: '0')
+        log.debug "annual salary: ${annualSalary}"
+
+        def workProfile = new WorkProfile(annualSalary: annualSalary, startTime: startTime, endTime: endTime)
+
+        getSalaryFigures(workProfile)
     }
 
     def updateEarnings = {
 
-        def annualSalary = Integer.valueOf(params.id ?: '0')
-        LocalDateTime now = new LocalDateTime()
+        int annualSalary = Integer.valueOf(params.id ?: params.annualSalary ?: '0')
+        log.debug "annual salary: ${annualSalary}"
+        def workProfile = new WorkProfile(annualSalary: annualSalary, startTime: startTime, endTime: endTime)
 
-        BigDecimal daily = calculatorJavaService.currentDaily(annualSalary, now)
-        BigDecimal monthly = calculatorJavaService.currentMonthly(annualSalary, now)
-        BigDecimal annual = calculatorJavaService.currentAnnual(annualSalary, now)
-
-        def model = [annualSalary:annualSalary, daily:daily, monthly:monthly, annual:annual]
+        LinkedHashMap<String, BigDecimal> model = getSalaryFigures(workProfile)
 
         render(template: "salaries", model: model)
+    }
+
+    private LinkedHashMap<String, BigDecimal> getSalaryFigures(WorkProfile workProfile) {
+        LocalDateTime now = new LocalDateTime()
+
+        BigDecimal daily = calculatorJavaService.currentDaily(workProfile, now)
+        BigDecimal monthly = calculatorJavaService.currentMonthly(workProfile, now)
+        BigDecimal annual = calculatorJavaService.currentAnnual(workProfile, now)
+
+        def model = [annualSalary: workProfile.annualSalary, daily: daily, monthly: monthly, annual: annual]
+        model
     }
 }

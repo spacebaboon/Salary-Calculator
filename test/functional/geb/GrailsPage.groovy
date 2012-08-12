@@ -1,6 +1,6 @@
 package geb
 
-import geb.*
+import geb.Page
 
 abstract class GrailsPage extends Page {
 
