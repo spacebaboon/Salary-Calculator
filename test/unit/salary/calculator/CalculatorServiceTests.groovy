@@ -21,6 +21,7 @@ class CalculatorServiceTests extends GrailsUnitTestCase {
         super.setUp()
         calculatorService = new CalculatorJavaService()
         workProfile = new WorkProfile(25000, nineAm, sixPm)
+
     }
 
     protected void tearDown() {
@@ -124,6 +125,26 @@ class CalculatorServiceTests extends GrailsUnitTestCase {
         assert 123456789 == calculatorService.round(bigNumber)
     }
 
-    // TODO: move day calculations to monday - friday only
+    void testThatFullDailyPayOnSaturdayShouldBeZeroIfNotWorked() {
+        workProfile.setSaturday(false)
+        workProfile.setAnnualSalary(60000)
+        def sevenPm = new LocalDateTime(2012, 8, 11, 19, 0) // Saturday
+        BigDecimal dailySoFar = calculatorService.currentDaily(workProfile, sevenPm)
+        assert 0 == dailySoFar
+    }
+
+    void testThatFullDailyPayOnSundayShouldBeFullIfWorked() {
+        workProfile.setSunday(true)
+        workProfile.setAnnualSalary(60000)
+        def sevenPm = new LocalDateTime(2012, 8, 12, 19, 0) // Sunday
+        BigDecimal fullDaily = calculatorService.round(calculatorService.fullDaily(workProfile.getAnnualSalary(), 31))
+        BigDecimal dailySoFar = calculatorService.currentDaily(workProfile, sevenPm)
+        assert fullDaily == dailySoFar
+    }
+
+    void testThatFullMonthsPayShouldBeTheSameIfOneDayOrSevenWorked() {
+
+    }
+
 
 }
