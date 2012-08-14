@@ -103,4 +103,18 @@ public class WorkProfile {
     public void setSunday(boolean sunday) {
         this.sunday = sunday;
     }
+
+    public boolean isDayWorked(int dayOfWeek) {
+        boolean worked = false;
+        switch (dayOfWeek) {
+            case 1: if (monday) worked = true; break;
+            case 2: if (tuesday) worked = true; break;
+            case 3: if (wednesday) worked = true; break;
+            case 4: if (thursday) worked = true; break;
+            case 5: if (friday) worked = true; break;
+            case 6: if (saturday) worked = true; break;
+            case 7: if (sunday) worked = true; break;
+        }
+        return worked;
+    }
 }

@@ -13,6 +13,11 @@ public class CalculatorJavaService implements ICalculatorJavaService {
     private static final int MONTHS_IN_YEAR = 12;
 
     public BigDecimal currentDaily(WorkProfile profile, LocalDateTime now) {
+        int dayOfWeek = now.getDayOfWeek();
+        boolean workedToday = profile.isDayWorked(dayOfWeek);
+        if (!workedToday) {
+            return new BigDecimal(0);
+        }
         LocalTime currentWorkTime = currentTimeWithinWorkHours(profile, now.toLocalTime());
         Seconds secondsWorked = new Period(profile.getStartTime(), currentWorkTime).toStandardSeconds();
         float hoursWorked = (float)secondsWorked.getSeconds() / 60 / 60;

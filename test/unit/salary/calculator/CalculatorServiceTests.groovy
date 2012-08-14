@@ -61,6 +61,12 @@ class CalculatorServiceTests extends GrailsUnitTestCase {
         assert 0 == dailySoFar
     }
 
+//    void testThatFullDailyDependsOnDaysWorked() {
+//        setAllDaysWorked(workProfile)
+//        BigDecimal dailyAllDays = calculatorService.fullDaily()
+//    }
+
+
     void testDailyAt6pmReturnsFullDailyRate() {
         workProfile.setAnnualSalary(60000)
         def sixPm = new LocalDateTime(2011, 1, 1, 18, 0)
@@ -143,8 +149,38 @@ class CalculatorServiceTests extends GrailsUnitTestCase {
     }
 
     void testThatFullMonthsPayShouldBeTheSameIfOneDayOrSevenWorked() {
+        workProfile.annualSalary = 750000
+        setAllDaysWorked(workProfile)
+        def endOfMonth = new LocalDateTime(2013, 2, 28, 23, 0)
+        BigDecimal monthlyEveryDayWorked = calculatorService.currentMonthly(workProfile, endOfMonth)
 
+        setNoDaysWorked(workProfile)
+        workProfile.monday = true
+        BigDecimal monthlyOnlyMondayWorked = calculatorService.currentMonthly(workProfile, endOfMonth)
+
+        assert monthlyEveryDayWorked == monthlyOnlyMondayWorked
     }
 
+
+    void setAllDaysWorked(WorkProfile workProfile) {
+        workProfile.monday = true
+        workProfile.tuesday = true
+        workProfile.wednesday = true
+        workProfile.thursday = true
+        workProfile.friday = true
+        workProfile.saturday = true
+        workProfile.sunday = true
+    }
+
+
+    void setNoDaysWorked(WorkProfile workProfile) {
+        workProfile.monday = false
+        workProfile.tuesday = false
+        workProfile.wednesday = false
+        workProfile.thursday = false
+        workProfile.friday = false
+        workProfile.saturday = false
+        workProfile.sunday = false
+    }
 
 }
