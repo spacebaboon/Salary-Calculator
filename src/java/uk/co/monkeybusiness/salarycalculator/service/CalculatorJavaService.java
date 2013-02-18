@@ -1,4 +1,4 @@
-package uk.co.monkeybusiness.salarycalculator.service.service;
+package uk.co.monkeybusiness.salarycalculator.service;
 
 import org.joda.time.*;
 import uk.co.monkeybusiness.salarycalculator.domain.WorkProfile;

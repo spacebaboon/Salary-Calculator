@@ -1,8 +1,5 @@
 package uk.co.monkeybusiness.salarycalculator.domain
 
-import org.joda.time.LocalDateTime
-import org.joda.time.LocalDate
-
 class WorkProfileTest extends GroovyTestCase {
 
 

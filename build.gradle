@@ -20,5 +20,5 @@ dependencies {
 
 task copyJar(type: Copy, dependsOn: jar) {
     from 'build/libs/salary-calculator.jar'
-    into '/home/ben/code/lib/'
+    into '/home/ben/dev/lib/'
 }

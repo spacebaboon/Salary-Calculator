@@ -1,7 +1,7 @@
 package salary.calculator
 
 import org.joda.time.LocalDateTime
-import uk.co.monkeybusiness.salarycalculator.service.service.CalculatorJavaService
+import uk.co.monkeybusiness.salarycalculator.service.CalculatorJavaService
 import org.joda.time.LocalTime
 import uk.co.monkeybusiness.salarycalculator.domain.WorkProfile
 

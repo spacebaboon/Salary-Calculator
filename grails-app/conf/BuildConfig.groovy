@@ -24,12 +24,4 @@ grails.project.dependency.resolution = {
         //mavenRepo "http://download.java.net/maven/2/"
         //mavenRepo "http://repository.jboss.com/maven2/"
     }
-    dependencies {
-        // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
-        test("org.seleniumhq.selenium:selenium-htmlunit-driver:latest.release") {
-            exclude 'xml-apis'
-        }
-        test("org.seleniumhq.selenium:selenium-firefox-driver:latest.release")
-        // runtime 'mysql:mysql-connector-java:5.1.13'
-    }
 }
