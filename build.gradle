@@ -15,10 +15,14 @@ repositories {
 }
 
 dependencies {
-//    compile 'joda-time:joda-time:2.1'
+    compile 'joda-time:joda-time:2.1'
+}
+
+jar {
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
 }
 
 task copyJar(type: Copy, dependsOn: jar) {
-    from 'build/libs/salary-calculator.jar'
+    from 'build/libs/Salary-Calculator.jar'
     into '/home/ben/dev/lib/'
 }

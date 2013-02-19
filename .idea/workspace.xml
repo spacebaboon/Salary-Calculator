@@ -2,27 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fedf6809-b4a0-4243-b2b8-5164a2bc4606" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/java/uk/co/monkeybusiness/salarycalculator/service/service/CalculatorJavaService.java" afterPath="$PROJECT_DIR$/src/java/uk/co/monkeybusiness/salarycalculator/service/CalculatorJavaService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/java/uk/co/monkeybusiness/salarycalculator/service/service/ICalculatorJavaService.java" afterPath="$PROJECT_DIR$/src/java/uk/co/monkeybusiness/salarycalculator/service/ICalculatorJavaService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/test/unit/salary/calculator/CalculatorServiceTests.groovy" afterPath="$PROJECT_DIR$/test/unit/uk/co/monkeybusiness/salarycalculator/service/CalculatorServiceTests.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/salary/calculator/CalculatorController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/salary/calculator/CalculatorController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/unit/uk/co/monkeybusiness/salarycalculator/domain/WorkProfileTest.groovy" afterPath="$PROJECT_DIR$/test/unit/uk/co/monkeybusiness/salarycalculator/domain/WorkProfileTest.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application.properties" afterPath="$PROJECT_DIR$/application.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/uk/co/monkeybusiness/salarycalculator/service/CalculatorJavaService.java" afterPath="$PROJECT_DIR$/src/java/uk/co/monkeybusiness/salarycalculator/service/CalculatorJavaService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/spring/resources.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/spring/resources.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/salary-calculator-grailsPlugins.iml" afterPath="$PROJECT_DIR$/salary-calculator-grailsPlugins.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/salary-calculator.iml" afterPath="$PROJECT_DIR$/salary-calculator.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="salary-calculator.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$USER_HOME$/.grails/" />
-    <file path="/Dummy.txt" changelist="fedf6809-b4a0-4243-b2b8-5164a2bc4606" time="1361224677691" ignored="false" />
+    <file path="/Dummy.txt" changelist="fedf6809-b4a0-4243-b2b8-5164a2bc4606" time="1361226739610" ignored="false" />
     <file path="$PROJECT_DIR$/../piggybank/.idea/workspace.xml" changelist="fedf6809-b4a0-4243-b2b8-5164a2bc4606" time="1361224212411" ignored="false" />
     <file path="/a.dummy" changelist="fedf6809-b4a0-4243-b2b8-5164a2bc4606" time="1361222650161" ignored="false" />
     <file path="/a.java" changelist="fedf6809-b4a0-4243-b2b8-5164a2bc4606" time="1361222873549" ignored="false" />
@@ -49,22 +36,7 @@
   </component>
   <component name="DebuggerManager">
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/java/uk/co/monkeybusiness/salarycalculator/service/CalculatorJavaService.java" line="41" class="uk.co.monkeybusiness.salarycalculator.service.CalculatorJavaService" package="uk.co.monkeybusiness.salarycalculator.service">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -108,15 +80,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name=".project" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.project">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name=".classpath" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.classpath">
           <provider selected="true" editor-type-id="text-editor">
@@ -165,16 +128,27 @@
       <file leaf-file-name="ICalculatorJavaService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/uk/co/monkeybusiness/salarycalculator/service/ICalculatorJavaService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="7" column="17" selection-start="205" selection-end="205" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CalculatorServiceTests.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/unit/uk/co/monkeybusiness/salarycalculator/service/CalculatorServiceTests.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="126" column="37" selection-start="4942" selection-end="4942" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CalculatorServiceTests.groovy" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/unit/uk/co/monkeybusiness/salarycalculator/service/CalculatorServiceTests.groovy">
+      <file leaf-file-name="build.gradle" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="126" column="37" selection-start="4942" selection-end="4942" vertical-scroll-proportion="0.04521739">
+            <state line="17" column="37" selection-start="223" selection-end="223" vertical-scroll-proportion="0.5061296">
               <folding />
             </state>
           </provider>
@@ -183,7 +157,7 @@
       <file leaf-file-name="WorkProfile.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/uk/co/monkeybusiness/salarycalculator/domain/WorkProfile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="11" selection-start="464" selection-end="464" vertical-scroll-proportion="0.0">
+            <state line="2" column="31" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -192,8 +166,10 @@
       <file leaf-file-name="CalculatorJavaService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/uk/co/monkeybusiness/salarycalculator/service/CalculatorJavaService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="0" selection-start="2397" selection-end="2397" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="16" column="49" selection-start="588" selection-end="588" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -223,15 +199,15 @@
         <option value="$PROJECT_DIR$/grails-app/controllers/salary/calculator/CalculatorController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/calculator/index.gsp" />
         <option value="$PROJECT_DIR$/grails-app/services/salary/calculator/CalculatorService.groovy" />
-        <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy" />
         <option value="$PROJECT_DIR$/application.properties" />
         <option value="$USER_HOME$/.grails/2.2.0/projects/salary-calculator/plugins/geb-0.5.1/application.properties" />
         <option value="$PROJECT_DIR$/test/unit/uk/co/monkeybusiness/salarycalculator/domain/WorkProfileTest.groovy" />
         <option value="$PROJECT_DIR$/test/unit/salary/calculator/CalculatorServiceTests.groovy" />
-        <option value="$PROJECT_DIR$/src/java/uk/co/monkeybusiness/salarycalculator/service/CalculatorJavaService.java" />
         <option value="$PROJECT_DIR$/src/java/uk/co/monkeybusiness/salarycalculator/service/CalculatorServiceTests.groovy" />
         <option value="$PROJECT_DIR$/test/unit/uk/co/monkeybusiness/salarycalculator/service/CalculatorServiceTests.groovy" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/java/uk/co/monkeybusiness/salarycalculator/service/CalculatorJavaService.java" />
       </list>
     </option>
   </component>
@@ -492,7 +468,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/java/uk/co/monkeybusiness/salarycalculator/service" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="GoToClass.includeJavaFiles" value="false" />
@@ -838,6 +814,11 @@
       <created>1308497274010</created>
       <updated>1308497274010</updated>
     </task>
+    <task id="LOCAL-00001" summary="Upgrade to Grails 2.2. Disable test using broken day of week logic until refactor.">
+      <created>1361226749158</created>
+      <updated>1361226749158</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -862,12 +843,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1055" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3278328" sideWeight="0.32869378" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893288" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39933994" sideWeight="0.49571735" order="3" side_tool="false" content_ui="tabs" />
@@ -884,13 +866,12 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25053534" sideWeight="0.6842684" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31573159" sideWeight="0.93361884" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25053534" sideWeight="0.68357223" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3164278" sideWeight="0.93361884" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3179318" sideWeight="0.49571735" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893288" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -933,7 +914,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Upgrade to Grails 2.2. Disable test using broken day of week logic until refactor." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -950,6 +931,7 @@
     <MESSAGE value="Replaced default Grails CSS with Blueprint CSS" />
     <MESSAGE value="Geb working with page model, and added explicit controller for index page" />
     <MESSAGE value="Test fix" />
+    <MESSAGE value="Upgrade to Grails 2.2. Disable test using broken day of week logic until refactor." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -983,13 +965,6 @@
     <entry file="file://$PROJECT_DIR$/README">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="348" selection-end="348" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1043,30 +1018,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/uk/co/monkeybusiness/salarycalculator/domain/WorkProfile.java">
+    <entry file="file://$PROJECT_DIR$/test/unit/uk/co/monkeybusiness/salarycalculator/service/CalculatorServiceTests.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="11" selection-start="464" selection-end="464" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/uk/co/monkeybusiness/salarycalculator/service/ICalculatorJavaService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="126" column="37" selection-start="4942" selection-end="4942" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java/uk/co/monkeybusiness/salarycalculator/service/CalculatorJavaService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="0" selection-start="2397" selection-end="2397" vertical-scroll-proportion="0.0">
+        <state line="16" column="49" selection-start="588" selection-end="588" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/uk/co/monkeybusiness/salarycalculator/service/ICalculatorJavaService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="17" selection-start="205" selection-end="205" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/uk/co/monkeybusiness/salarycalculator/domain/WorkProfile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="31" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/unit/uk/co/monkeybusiness/salarycalculator/service/CalculatorServiceTests.groovy">
+    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="126" column="37" selection-start="4942" selection-end="4942" vertical-scroll-proportion="0.04521739">
+        <state line="17" column="37" selection-start="223" selection-end="223" vertical-scroll-proportion="0.5061296">
           <folding />
         </state>
       </provider>

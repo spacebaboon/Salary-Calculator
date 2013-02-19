@@ -1,6 +1,10 @@
 package uk.co.monkeybusiness.salarycalculator.service;
 
-import org.joda.time.*;
+import org.joda.time.LocalDateTime;
+import org.joda.time.LocalDate;
+import org.joda.time.LocalTime;
+import org.joda.time.Period;
+import org.joda.time.Seconds;
 import uk.co.monkeybusiness.salarycalculator.domain.WorkProfile;
 
 import java.math.BigDecimal;
